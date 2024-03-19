@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accidentreports.DashboardController">
+   <children>
+      <AnchorPane fx:id="navbar" prefHeight="600.0" prefWidth="180.0" styleClass="navbar">
+         <children>
+            <Circle fx:id="circle" fill="#323232" layoutX="90.0" layoutY="87.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label alignment="CENTER" layoutX="31.0" layoutY="189.0" prefHeight="21.0" prefWidth="120.0" text="Welcome!." textFill="WHITE">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="user" alignment="CENTER" layoutX="6.0" layoutY="222.0" prefHeight="32.0" prefWidth="166.0" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="home" alignment="CENTER" layoutX="6.0" layoutY="297.0" mnemonicParsing="false" onAction="#changePage" prefHeight="39.0" prefWidth="166.0" styleClass="navbutton" text="Home" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="HOME" />
+               </graphic>
+            </Button>
+            <Button fx:id="myreports" alignment="CENTER" layoutX="7.0" layoutY="344.0" mnemonicParsing="false" onAction="#changePage" prefHeight="39.0" prefWidth="166.0" styleClass="navbutton" text="My reports" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="BOOK" />
+               </graphic>
+            </Button>
+            <Button fx:id="records" alignment="CENTER" layoutX="7.0" layoutY="391.0" mnemonicParsing="false" onAction="#changePage" prefHeight="39.0" prefWidth="166.0" styleClass="navbutton" text="Records" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#fafafa" glyphName="CLIPBOARD" />
+               </graphic>
+            </Button>
+            <Button fx:id="statistics" alignment="CENTER" layoutX="7.0" layoutY="438.0" mnemonicParsing="false" onAction="#changePage" prefHeight="39.0" prefWidth="166.0" styleClass="navbutton" text="Statistics" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="LINE_CHART" />
+               </graphic>
+            </Button>
+            <Button fx:id="contact" alignment="CENTER" layoutX="7.0" layoutY="484.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="166.0" styleClass="navbutton" text="Contact" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="PHONE" />
+               </graphic>
+            </Button>
+            <Button fx:id="edit" layoutX="30.0" layoutY="28.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="120.0" styleClass="editButton" text="Edit" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <graphic>
+                  <FontAwesomeIcon fx:id="edit_icon" fill="WHITE" glyphName="EDIT" size="1.4em" />
+               </graphic></Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="180.0" prefHeight="30.0" prefWidth="820.0" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="788.0" layoutY="-1.0" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" styleClass="exit" textFill="#d38b8b" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+               <graphic>
+                  <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="home_page" layoutX="180.0" layoutY="33.0" prefHeight="570.0" prefWidth="820.0">
+         <children>
+            <AnchorPane prefHeight="150.0" prefWidth="820.0" styleClass="card-top">
+               <children>
+                  <Label layoutX="104.0" layoutY="28.0" prefHeight="49.0" prefWidth="482.0" text="CCIDENT REPORT" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Handwriting Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="-29.0" prefHeight="144.0" prefWidth="74.0" text="A" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Handwriting Italic" size="96.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button fx:id="report_accident_button" layoutX="614.0" layoutY="492.0" mnemonicParsing="false" onMouseClicked="#reportaccident" styleClass="button-design" text="Report an accident?" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <AnchorPane layoutX="547.0" layoutY="159.0" prefHeight="120.0" prefWidth="259.0" styleClass="Anchorpane-design-home">
+               <children>
+                  <Label layoutX="17.0" layoutY="45.0" prefHeight="25.0" prefWidth="150.0" text="Today's total reports:" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="73.0" prefHeight="25.0" prefWidth="166.0" text="Today's total accidents:" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="21.0" prefWidth="218.0" text="Today's update:" textFill="RED">
+                     <font>
+                        <Font name="Bodoni MT Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="173.0" layoutY="47.0" prefHeight="25.0" prefWidth="38.0" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="192.0" layoutY="73.0" prefHeight="25.0" prefWidth="38.0" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="547.0" layoutY="302.0" prefHeight="150.0" prefWidth="259.0" styleClass="Anchorpane-design-home">
+               <children>
+                  <Label layoutX="43.0" layoutY="42.0" prefHeight="25.0" prefWidth="196.0" text="Total reports:" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="43.0" layoutY="75.0" prefHeight="25.0" prefWidth="196.0" text="Today's reports:" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="11.0" prefHeight="31.0" prefWidth="218.0" text="Your reports" textFill="RED">
+                     <font>
+                        <Font name="Bodoni MT Black" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="43.0" layoutY="111.0" prefHeight="25.0" prefWidth="196.0" text="Approved:" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="143.0" layoutY="43.0" prefHeight="25.0" prefWidth="38.0" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="162.0" layoutY="75.0" prefHeight="25.0" prefWidth="38.0" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="124.0" layoutY="111.0" prefHeight="25.0" prefWidth="38.0" textFill="RED">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="46.0" layoutY="178.0" prefHeight="140.0" prefWidth="202.0" styleClass="card-design-home">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="Total Reports">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalReports_label" alignment="CENTER" layoutX="73.0" layoutY="70.0" prefHeight="26.0" prefWidth="38.0" text="0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="289.0" layoutY="178.0" prefHeight="140.0" prefWidth="202.0" styleClass="card-design-home">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="Total Accidents">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalAccidents_label" alignment="CENTER" layoutX="73.0" layoutY="70.0" prefHeight="26.0" prefWidth="38.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="46.0" layoutY="359.0" prefHeight="140.0" prefWidth="202.0" styleClass="card-design-home">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="Total Injured">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalInjured_label" alignment="CENTER" layoutX="73.0" layoutY="70.0" prefHeight="26.0" prefWidth="38.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="289.0" layoutY="359.0" prefHeight="140.0" prefWidth="202.0" styleClass="card-design-home">
+               <children>
+                  <Label layoutX="14.0" layoutY="6.0" text="Total Deaths">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalDeath_label" alignment="CENTER" layoutX="73.0" layoutY="70.0" prefHeight="26.0" prefWidth="38.0" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="myreports_page" layoutX="179.0" layoutY="34.0" prefHeight="570.0" prefWidth="820.0" visible="false">
+         <children>
+            <AnchorPane layoutX="1.0" layoutY="8.0" prefHeight="140.0" prefWidth="820.0" styleClass="card-top">
+               <children>
+                  <Label layoutX="130.0" layoutY="31.0" prefHeight="49.0" prefWidth="482.0" text="y Reports" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Handwriting Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="-19.0" prefHeight="120.0" prefWidth="90.0" text="M" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Handwriting Italic" size="96.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="209.0" layoutY="150.0" prefHeight="416.0" prefWidth="715.0" styleClass="Anchorpane-design-tableview" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0">
+               <children>
+                  <TableView fx:id="report_table_view" layoutX="4.0" layoutY="46.0" prefHeight="366.0" prefWidth="707.0">
+                     <columns>
+                        <TableColumn fx:id="col_report_id" prefWidth="50.0" sortable="false" text="Report Id" />
+                        <TableColumn fx:id="col_report_date" prefWidth="110.0" sortable="false" text="Date" />
+                        <TableColumn fx:id="col_report_type" prefWidth="58.0" sortable="false" text="Type" />
+                        <TableColumn fx:id="col_report_upazila" prefWidth="99.0" sortable="false" text="Upazila" />
+                        <TableColumn fx:id="col_report_place" prefWidth="92.0" sortable="false" text="Place" />
+                        <TableColumn fx:id="col_report_injured" prefWidth="60.0" sortable="false" text="Injured" />
+                        <TableColumn fx:id="col_report_death" prefWidth="57.0" sortable="false" text="Death" />
+                        <TableColumn fx:id="col_report_cause" prefWidth="107.0" sortable="false" text="Cause" />
+                        <TableColumn fx:id="col_report_varified" prefWidth="73.0" sortable="false" text="Status" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="report_table_title" layoutX="3.0" layoutY="7.0" prefHeight="21.0" prefWidth="202.0" text="All my reports">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="search_field" layoutX="442.0" layoutY="7.0" prefHeight="33.0" prefWidth="196.0" promptText="Search" styleClass="search-field" />
+                  <Button layoutX="651.0" layoutY="7.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="58.0" styleClass="button-design" />
+                  <Button layoutX="358.0" layoutY="7.0" mnemonicParsing="false" onAction="#filterHightoLow" prefHeight="31.0" prefWidth="30.0">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="ARROW_UP" onMouseClicked="#filterHightoLow" />
+                     </graphic>
+                  </Button>
+                  <Button layoutX="400.0" layoutY="9.0" mnemonicParsing="false" onAction="#filterLowtoHigh" onMouseClicked="#filterLowtoHigh" prefHeight="31.0" prefWidth="30.0">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="ARROW_DOWN" />
+                     </graphic>
+                  </Button>
+                  <ComboBox fx:id="filter_cb" layoutX="246.0" layoutY="8.0" onAction="#setFilterComboboxvalue" prefHeight="31.0" prefWidth="103.0" promptText="Filter" />
+                  <FontAwesomeIcon fx:id="search_button" fill="WHITE" glyphName="SEARCH" layoutX="670.0" layoutY="32.0" size="1.4em" />
+               </children>
+            </AnchorPane>
+            <Label fx:id="approved_button" layoutX="10.0" layoutY="335.0" onMouseClicked="#approvedButton" prefHeight="30.0" prefWidth="90.0" styleClass="label-design" text="Approved" />
+            <Label fx:id="disapproved_button" layoutX="9.0" layoutY="372.0" onMouseClicked="#disapprovedButton" prefHeight="30.0" prefWidth="90.0" styleClass="label-design" text="Disapproved" />
+            <Label fx:id="all_button" layoutX="10.0" layoutY="409.0" onMouseClicked="#allmyreportButton" prefHeight="30.0" prefWidth="90.0" styleClass="label-design" text="All" />
+            <Button fx:id="report_accident_button1" layoutX="9.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#reportaccident1" prefHeight="31.0" prefWidth="90.0" styleClass="button-design" text="Report!" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="pending_button" layoutX="9.0" layoutY="298.0" onMouseClicked="#pendingButton" prefHeight="30.0" prefWidth="90.0" styleClass="label-design" text="Pending" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="record_page" layoutX="180.0" layoutY="33.0" prefHeight="570.0" prefWidth="820.0" visible="false">
+         <children>
+            <AnchorPane prefHeight="150.0" prefWidth="820.0" styleClass="card-top">
+               <children>
+                  <Label layoutX="104.0" layoutY="28.0" prefHeight="49.0" prefWidth="482.0" text="Cords" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Handwriting Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="-29.0" prefHeight="144.0" prefWidth="74.0" text="R" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Handwriting Italic" size="96.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="210.0" layoutY="150.0" prefHeight="417.0" prefWidth="653.0" styleClass="Anchorpane-design-tableview" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <TableView id="table_record" fx:id="record_table" layoutX="2.0" layoutY="47.0" prefHeight="366.0" prefWidth="653.0">
+                    <columns>
+                      <TableColumn fx:id="col_recordid" prefWidth="75.0" sortable="false" text="ID" />
+                      <TableColumn fx:id="col_recorddate" prefWidth="88.0" sortable="false" text="Date" />
+                        <TableColumn fx:id="col_recordtype" prefWidth="70.0" sortable="false" text="Type" />
+                        <TableColumn fx:id="col_recordupazila" sortable="false" text="Upazila" />
+                        <TableColumn fx:id="col_recordplace" prefWidth="92.0" sortable="false" text="Place" />
+                        <TableColumn fx:id="col_recordinjured" prefWidth="61.0" sortable="false" text="Injured" />
+                        <TableColumn fx:id="col_recorddeath" prefWidth="72.0" sortable="false" text="Death" />
+                        <TableColumn fx:id="col_recordcause" prefWidth="114.0" sortable="false" text="Cause" />
+                    </columns>
+                  </TableView>
+                  <Label fx:id="record_label" layoutX="14.0" layoutY="12.0" prefHeight="21.0" prefWidth="202.0" text="Today's records">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="307.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#filterRecordHightoLow" prefHeight="31.0" prefWidth="38.0">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="ARROW_UP" />
+                     </graphic>
+                  </Button>
+                  <Button layoutX="354.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#filterRecordLowtoHigh" prefHeight="31.0" prefWidth="38.0">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="ARROW_DOWN" />
+                     </graphic>
+                  </Button>
+                  <ComboBox fx:id="filter_record" layoutX="208.0" layoutY="14.0" onMouseClicked="#setFilterComboboxvalue" prefHeight="31.0" prefWidth="90.0" promptText="Filter" />
+                  <TextField layoutX="410.0" layoutY="11.0" prefHeight="33.0" prefWidth="196.0" promptText="Search" styleClass="search-field" />
+               </children>
+            </AnchorPane>
+            <DatePicker fx:id="record_dp" layoutX="20.0" layoutY="198.0" onAction="#setFilterComboboxvalue" prefHeight="31.0" prefWidth="134.0" />
+            <Button layoutX="20.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#showTodaysRecord" prefHeight="31.0" prefWidth="90.0" text="Today" />
+            <Button layoutX="20.0" layoutY="294.0" mnemonicParsing="false" onMouseClicked="#allRecord" prefHeight="31.0" prefWidth="90.0" text="All" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="statistics_page" layoutX="180.0" layoutY="34.0" prefHeight="570.0" prefWidth="820.0" visible="false">
+         <children>
+            <AnchorPane layoutX="-1.0" prefHeight="150.0" prefWidth="820.0" styleClass="card-top">
+               <children>
+                  <Label layoutX="104.0" layoutY="28.0" prefHeight="49.0" prefWidth="482.0" text="CCIDENT REPORT" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Handwriting Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="-29.0" prefHeight="144.0" prefWidth="74.0" text="A" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Handwriting Italic" size="96.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="201.0" layoutY="152.0" prefHeight="403.0" prefWidth="608.0" AnchorPane.rightAnchor="11.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="12.0" prefHeight="21.0" prefWidth="202.0" text="All Statistics">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="21.0" layoutY="169.0" prefHeight="62.0" prefWidth="166.0" text="Statistics">
+               <font>
+                  <Font name="Lucida Handwriting Italic" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="report_accident_page" layoutX="181.0" layoutY="34.0" prefHeight="570.0" prefWidth="820.0" visible="false">
+         <children>
+            <AnchorPane layoutX="-1.0" prefHeight="150.0" prefWidth="820.0" styleClass="card-top">
+               <children>
+                  <Label layoutX="104.0" layoutY="28.0" prefHeight="49.0" prefWidth="482.0" text="eport Accident" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Handwriting Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="-29.0" prefHeight="144.0" prefWidth="74.0" text="R" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Handwriting Italic" size="96.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="201.0" layoutY="149.0" prefHeight="416.0" prefWidth="821.0" AnchorPane.rightAnchor="-1.0">
+               <children>
+                  <Button layoutX="520.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#makeReport" prefHeight="31.0" prefWidth="77.0" styleClass="button-design" text="Report" textFill="WHITE" />
+                  <ComboBox fx:id="contry_cb" layoutX="28.0" layoutY="34.0" prefWidth="150.0" styleClass="combobox-design" />
+                  <ComboBox fx:id="division_cb" layoutX="28.0" layoutY="76.0" onAction="#setDistrictComboboxvalue" prefWidth="150.0" promptText="Division" styleClass="combobox-design" />
+                  <Label layoutX="261.0" layoutY="25.0" prefHeight="27.0" prefWidth="150.0" text="Report Detail">
+                     <font>
+                        <Font name="Baskerville Old Face" size="22.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="279.0" layoutY="59.0" prefHeight="286.0" prefWidth="482.0">
+                     <children>
+                        <TextField fx:id="place_tf" layoutX="120.0" layoutY="17.0" prefHeight="33.0" prefWidth="348.0" promptText="Address" styleClass="textfield-design" />
+                        <TextField fx:id="injured_tf" layoutX="120.0" layoutY="55.0" prefHeight="33.0" prefWidth="348.0" promptText="Injured" styleClass="textfield-design" />
+                        <TextField fx:id="death_tf" layoutX="121.0" layoutY="96.0" prefHeight="33.0" prefWidth="348.0" promptText="Death" styleClass="textfield-design" />
+                        <Label layoutX="14.0" layoutY="23.0" prefHeight="21.0" prefWidth="77.0" text="Address" />
+                        <Label layoutX="14.0" layoutY="61.0" prefHeight="21.0" prefWidth="77.0" text="Injured" />
+                        <Label layoutX="14.0" layoutY="102.0" prefHeight="21.0" prefWidth="77.0" text="Death" />
+                        <Label layoutX="14.0" layoutY="253.0" prefHeight="21.0" prefWidth="77.0" text="Date" />
+                        <DatePicker fx:id="date_df" layoutX="121.0" layoutY="247.0" promptText="Slelect" />
+                        <TextField fx:id="cause_tf" layoutX="120.0" layoutY="137.0" prefHeight="33.0" prefWidth="348.0" promptText="Cause" styleClass="textfield-design" />
+                        <Label layoutX="16.0" layoutY="144.0" prefHeight="21.0" prefWidth="77.0" text="Cause" />
+                        <TextField fx:id="description_tf" layoutX="121.0" layoutY="179.0" prefHeight="33.0" prefWidth="348.0" promptText="Description" styleClass="textfield-design" />
+                        <Label layoutX="16.0" layoutY="184.0" prefHeight="21.0" prefWidth="77.0" text="Description" />
+                     </children>
+                  </AnchorPane>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/font_image.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="85.0" layoutY="374.0" text="Accident Image" />
+                  <ComboBox fx:id="type_cb" layoutX="29.0" layoutY="199.0" prefWidth="150.0" promptText="Type" styleClass="combobox-design" />
+                  <ComboBox fx:id="district_cb" layoutX="29.0" layoutY="117.0" onAction="#setUpazilaComboboxvalue" prefWidth="150.0" promptText="District" styleClass="combobox-design" />
+                  <ComboBox fx:id="upazila_cb" layoutX="30.0" layoutY="158.0" prefWidth="150.0" promptText="Upazila" styleClass="combobox-design" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

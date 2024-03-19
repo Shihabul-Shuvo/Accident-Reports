@@ -1,0 +1,12 @@
+--Moderator panel
+
+Approve and delete(as removed in the database) new reports 
+Update Accident (like update injured and death values in the database)
+Handle user messages and replies from user
+Add a news link to the database the for corresponding report
+See specific user details like (total approved, disapproved, and deleted reports)
+Report to admin if any user seems suspicious
+
+--Admin
+
+

@@ -1,0 +1,108 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 2, 2022, 4:13:09 PM
+    Author     : User
+*/
+
+.navbar{
+    -fx-background-color:linear-gradient(to bottom right, #2f466b, #662d60)
+}
+
+.card-top{
+    -fx-background-color:linear-gradient(to bottom right, #2f466b, #662d60)
+}
+.exit{
+    
+    -fx-background-color:transparent;
+    -fx-background-radius:10px;
+    -fx-cursor:hand;
+}
+
+.exit:hover{
+    -fx-background-color:#ff0000;
+}
+.navbutton{
+    -fx-background-color: linear-gradient(to bottom right, rgba(121, 172, 255, 0.2), rgba(255, 106, 239, 0.2));
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+}
+.navbutton:hover{
+    -fx-background-color: linear-gradient(to bottom right, rgba(121, 172, 255, 0.6), rgba(255, 106, 239, 0.6));
+}
+
+.editButton{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 50px 0px 0px 0px;
+}
+
+.label-design{
+    -fx-cursor: hand;
+    -fx-border-width: 0px 0px 1px 1px;
+    -fx-border-color: black;
+    -fx-background-color: linear-gradient(to bottom right, rgba(203, 94, 238, 1), rgba(75, 225, 236, 1));
+    -fx-alignment: CENTER;
+}
+.label-design:hover{
+    -fx-background-color: linear-gradient(to bottom right, rgba(203, 94, 238, 0.8), rgba(75, 225, 236, 0.8));
+}
+
+.button-design{
+    -fx-background-color: #1d1c1d;
+    -fx-border-radius: 5px; 
+}
+.button-design:hover{
+    -fx-background-color: linear-gradient(to left bottom, rgba(114, 114, 255, 0.8), rgba(0, 0, 227, 0.8));
+    -fx-border-width: 1px;
+    -fx-border-color: #fff;
+    -fx-cursor: hand;
+}
+.Anchorpane-design-home{
+    -fx-background-color: rgba(168, 197, 255, 0.8);
+}
+.Anchorpane-design-tableview{
+    -fx-border-width: 2px;
+    -fx-border-radius: 3px;
+    -fx-border-color: black;
+}
+.card-design-home{
+    -fx-background-color: linear-gradient(to right bottom, rgba(33, 255, 225, 1), rgba(255, 161, 0, 0.8));
+}
+.card-design-home:hover{
+    -fx-border-width: 5px;
+    -fx-border-color: #000
+}
+
+.combobox-design{
+    -fx-background-radius:10px;
+    -fx-border-color:linear-gradient(to bottom right, #2f466b, #662d60);
+    -fx-border-radius:10px;
+    -fx-text-inner-color:#000;
+}
+
+.textfield-design{
+    -fx-background-color: transparent;
+    -fx-border-width: 1px;
+    -fx-border-color: black;
+    -fx-border-radius: 3
+}
+
+.label-design{
+    -fx-background-color:linear-gradient(to bottom right, rgba(203, 94, 238, 0.8), rgba(75, 225, 236, 0.8));
+    -fx-background-radius:10px;
+    -fx-border-color:#000;
+    -fx-border-radius:10px;
+    -fx-text-inner-color:#000;
+}
+.search-field{
+    -fx-background-color: #a4a4a417;
+    -fx-border-radius: 10px;
+    -fx-border-color: linear-gradient(to bottom right, rgba(203, 94, 238, 0.8), rgba(75, 225, 236, 0.8));
+}
+.search-field:hover{
+    -fx-border-width: 2px;
+}

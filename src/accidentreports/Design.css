@@ -1,0 +1,115 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 28, 2022, 11:24:10 PM
+    Author     : User
+*/
+
+.login-bg{
+    -fx-background-color:linear-gradient(to bottom right, #2f466b, #662d60)
+}
+
+.exit{
+    
+    -fx-background-color:transparent;
+    -fx-background-radius:10px;
+    -fx-cursor:hand;
+}
+
+.exit:hover{
+    -fx-background-color:#ff0000;
+}
+.exitIcon:hover{
+    -fx-background-color:transparent;
+}
+
+.textfield-design{
+    -fx-background-color:transparent;
+    -fx-background-radius:10px;
+    -fx-border-color:linear-gradient(to bottom right, #2f466b, #662d60);
+    -fx-border-radius:10px;
+    -fx-text-inner-color:#000;
+}
+
+.label-design{
+    -fx-background-color:transparent;
+    -fx-background-radius:10px;
+    -fx-border-color:#000;
+    -fx-border-radius:10px;
+    -fx-text-inner-color:#000;
+}
+
+.button-design:hover{
+    -fx-background-color:linear-gradient(to bottom left, #000, #ffb600);
+}
+
+.labelwithimage {          
+    -fx-graphic: url("MyPetFontImage.png");
+    -fx-graphic-text-gap : 10;
+}
+
+.combobox-design{
+    -fx-background-color:#ffb600;
+    -fx-background-radius:10px;
+    -fx-border-color:linear-gradient(to bottom right, #2f466b, #662d60);
+    -fx-border-radius:10px;
+    -fx-text-inner-color:#000;
+}
+
+.button-design{
+    -fx-background-color:linear-gradient(to bottom right, #2f466b, #662d60);
+    -fx-background-radius:20px;
+    -fx-cursor:hand;
+}
+
+.textfield-newdesign{
+    -fx-background-color:transparent;
+    -fx-background-radius:10px;
+    -fx-border-color:linear-gradient(to bottom right, #fff, #ffb600);
+    -fx-border-radius:10px;
+    -fx-text-inner-color:#000;
+    -fx-font-color: #fff;
+    -fx-text-fill: #fff;
+    -fx-text-weight: 600;
+}
+
+.button-newdesign{
+    -fx-background-color:linear-gradient(to bottom right, #ffb600, #000);
+    -fx-background-radius:20px;
+    -fx-cursor:hand;
+}
+
+.button-newdesign:hover{
+    -fx-background-color:linear-gradient(to bottom left, #517ab5, #ae44a5);
+}
+
+.label-newdesign{
+    -fx-background-color:transparent;
+    -fx-background-radius:10px;
+    -fx-border-color:#fff;
+    -fx-border-radius:10px;
+    -fx-text-inner-color:#fff;
+}
+
+.Anchorpane-design{
+    -fx-background-color:transparent;
+    -fx-background-radius:10px;
+    -fx-border-color:linear-gradient(to bottom right, #2f466b, #662d60);
+    -fx-border-radius:10px;
+}
+
+.notificationLabel-design{
+    -fx-background-color:transparent;
+    -fx-background-radius:10px;
+    -fx-border-color: #ff0000;
+    -fx-border-radius:10px;
+}
+
+.dialougepen-design{
+    -fx-background-color:transparent;
+    -fx-text-inner-color:#fff;
+}
+
